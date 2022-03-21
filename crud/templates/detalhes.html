@@ -3,8 +3,27 @@
 
 
 {% block content %}
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Detalhes Usuario</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Consultas
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{% url 'json' %}">Consultar JSON</a>
+    <a class="dropdown-item" href="{% url 'export_csv' %}">Consultar CSV</a>
+  </div>
+</div>
+ </nav>
+
+
 <div class="container mt-3">
     <h4>Detalhe do Usuario</h4>
+    <p></p>
     <a href="{% url 'cadastrar' %}" class="btn btn-sm btn-info">Novo Usuario</a>
     <hr>
     <table class="table">

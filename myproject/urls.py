@@ -24,5 +24,7 @@ urlpatterns = [
     path('cadastrar/', views.cadastrar,name='cadastrar'),
     path('',views.detalhes,name='detalhes'),
     path('update/<int:id>', views.editar, name='editar'),
-    path('delete/<int:id>', views.deletar, name='deletar')
+    path('delete/<int:id>', views.deletar, name='deletar'),
+    path('json',views.json, name='json'),
+    path('export_csv',views.export_csv, name='export_csv')
 ]
