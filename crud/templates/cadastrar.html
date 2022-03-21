@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img  width="30" height="30" class="d-inline-block align-top" alt="">
+    CadastrarUsuario
+  </a>
+</nav>
+ <div class="mx-auto" style="width: 800px;">
+    <h4>Cadastro</h4>
+    <hr>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+          <div class ="form-group">
+              <label for="">Usuario</label>
+              <input name="id_usuario" type="text" required="required" class="form-control">
+          </div>
+          <div class ="form-group">
+              <label for="">Senha</label>
+              <input name="senha" type="password" class="form-control">
+          </div>
+
+          <div class ="form-group">
+              <label for="">Data de Nascimento</label>
+              <input name="dataNascimento" type="date" required="required" class="form-control">
+          </div>
+        <p>
+        </p>
+
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary">Cadastrar</button>
+              <a  href="{% url 'detalhes' %}" class="btn btn-info">Consultar</a>
+          </div>
+
+
+    </form>
+    </div>
+
+
+
+
+{% endblock content %}

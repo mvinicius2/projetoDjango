@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img  width="30" height="30" class="d-inline-block align-top" alt="">
+    CadastrarUsuario
+  </a>
+</nav>
+ <div class="mx-auto" style="width: 800px;">
+    <h4>Editar Usuario</h4>
+    <hr>
+    <form method="POST" action="/update/{{usuario.id}}">
+        {% csrf_token %}
+
+          <div class ="form-group">
+              <label for="">Usuario</label>
+              <input name="id_usuario" type="text" value="{{usuario.id_usuario}}"  class="form-control">
+          </div>
+          <div class ="form-group">
+              <label for="">Senha</label>
+              <input name="senha" type="password" value="{{usuario.senha}}" class="form-control">
+          </div>
+
+          <div class ="form-group">
+              <label for="">Data de Nascimento</label>
+              <input name="dataNascimento" type="date" value="{{usuario.dataNascimento}}"  class="form-control">
+          </div>
+        <p>
+        </p>
+
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary">Editar</button>
+              <a  href="{% url 'detalhes' %}" class="btn btn-info">Consultar</a>
+          </div>
+
+
+    </form>
+    </div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+<div class="container mt-3">
+    <h4>Detalhe do Usuario</h4>
+    <a href="{% url 'cadastrar' %}" class="btn btn-sm btn-info">Novo Usuario</a>
+    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Senha</th>
+            <th>Data Nascimento</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for s in usuario %}
+        <tr>
+            <td>{{ s.id_usuario}}</td>
+            <td>{{ s.senha }}</td>
+            <td>{{ s.dataNascimento }}</td>
+            <td>
+                <a href="update/{{s.id}}" class="btn btn-sm btn-info">Editar</a>
+                 <a href="delete/{{s.id}}" class="btn btn-sm btn-danger">Deletar</a>
+
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
